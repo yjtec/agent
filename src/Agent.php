@@ -16,6 +16,12 @@ class Agent extends Mobile_Detect
         'Macintosh' => 'Macintosh',
     ];
 
+    protected static $additionalPhoneDevices = [
+        'Android_SDK' => 'ALIYUN-ANDROID',
+        'Android SDK' => 'CA_ANDROID_SDK',
+        'IOS SDK' => 'CA_iOS_SDK'
+    ];
+
     /**
      * List of additional operating systems.
      * @var array
@@ -37,8 +43,11 @@ class Agent extends Mobile_Detect
      * @var array
      */
     protected static $additionalBrowsers = [
-        'WeChat'          => '\bMicroMessenger\b',
+        'WeChat' => '\bMicroMessenger\b',
         'AliPay' => '\bAlipay\b',
+        'HuaweiBrowser' => '\bHuaweiBrowser\b',
+        'Quark' => '\bQuark\b',
+        'QQBrowser' => '\bQQBrowser\b',
         'Opera Mini' => 'Opera Mini',
         'Opera' => 'Opera|OPR',
         'Edge' => 'Edge|Edg',
@@ -51,6 +60,9 @@ class Agent extends Mobile_Detect
         'IE' => 'MSIE|IEMobile|MSIEMobile|Trident/[.0-9]+',
         'Netscape' => 'Netscape',
         'Mozilla' => 'Mozilla',
+        'Android_SDK' => 'ALIYUN-ANDROID',
+        'Android SDK' => 'CA_ANDROID_SDK',
+        'IOS SDK' => 'CA_iOS_SDK'
     ];
 
     /**
@@ -75,6 +87,9 @@ class Agent extends Mobile_Detect
         'Edge' => ['Edge/[VER]', 'Edg/[VER]'],
         'Vivaldi' => 'Vivaldi/[VER]',
         'Coc Coc' => 'coc_coc_browser/[VER]',
+        'Android_SDK' => 'ALIYUN-ANDROID-[VER]',
+        'Android SDK' => 'CA_ANDROID_SDK_[VER]',
+        'IOS SDK' => 'CA_iOS_SDK_[VER]'
     ];
 
     /**
@@ -248,6 +263,7 @@ class Agent extends Mobile_Detect
     public function device($userAgent = null)
     {
         $rules = static::mergeRules(
+            static::$additionalPhoneDevices,
             static::getDesktopDevices(),
             static::getPhoneDevices(),
             static::getTabletDevices(),
