@@ -36,6 +36,7 @@ class Agent extends Mobile_Detect
         'OpenBSD' => 'OpenBSD',
         'Linux' => 'Linux',
         'ChromeOS' => 'CrOS',
+        'IOS SDK' => 'CA_iOS_SDK'
     ];
 
     /**
