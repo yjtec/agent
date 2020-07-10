@@ -37,6 +37,8 @@ class Agent extends Mobile_Detect
      * @var array
      */
     protected static $additionalBrowsers = [
+        'WeChat'          => '\bMicroMessenger\b',
+        'AliPay' => '\bAlipay\b',
         'Opera Mini' => 'Opera Mini',
         'Opera' => 'Opera|OPR',
         'Edge' => 'Edge|Edg',
@@ -129,8 +131,8 @@ class Agent extends Mobile_Detect
     public static function getBrowsers()
     {
         return static::mergeRules(
-            static::$browsers,
-            static::$additionalBrowsers
+            static::$additionalBrowsers,
+            static::$browsers
         );
     }
 
@@ -211,10 +213,10 @@ class Agent extends Mobile_Detect
 
             // Check match
             if ($this->match($regex, $userAgent)) {
+
                 return $key ?: reset($this->matchesArray);
             }
         }
-
         return false;
     }
 
