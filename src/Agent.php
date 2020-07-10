@@ -129,8 +129,8 @@ class Agent extends Mobile_Detect
     public static function getBrowsers()
     {
         return static::mergeRules(
-            static::$additionalBrowsers,
-            static::$browsers
+            static::$browsers,
+            static::$additionalBrowsers
         );
     }
 
