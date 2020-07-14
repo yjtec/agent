@@ -19,7 +19,8 @@ class Agent extends Mobile_Detect
     protected static $additionalPhoneDevices = [
         'Android_SDK' => 'ALIYUN-ANDROID',
         'Android SDK' => 'CA_ANDROID_SDK',
-        'IOS SDK' => 'CA_iOS_SDK'
+        'IOS SDK' => 'CA_iOS_SDK',
+        'Zabbix' => 'Zabbix'
     ];
 
     /**
@@ -44,6 +45,7 @@ class Agent extends Mobile_Detect
      * @var array
      */
     protected static $additionalBrowsers = [
+        'Zabbix' => 'Zabbix',
         'WeChat' => '\bMicroMessenger\b',
         'AliPay' => '\bAlipay\b',
         'HuaweiBrowser' => '\bHuaweiBrowser\b',
@@ -90,7 +92,10 @@ class Agent extends Mobile_Detect
         'Coc Coc' => 'coc_coc_browser/[VER]',
         'Android_SDK' => 'ALIYUN-ANDROID-[VER]',
         'Android SDK' => 'CA_ANDROID_SDK_[VER]',
-        'IOS SDK' => 'CA_iOS_SDK_[VER]'
+        'IOS SDK' => 'CA_iOS_SDK_[VER]',
+        'QQBrowser' => 'QQBrowser/[VER]',
+        'WeChat' => 'MicroMessenger/[VER]',
+        'Zabbix' => 'Zabbix/[VER]'
     ];
 
     /**
